@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 def aboutus(request):
-    return HttpResponse("About Us Page")
+    return HttpResponse("About Us page 1")
 
 
 def course(request):
