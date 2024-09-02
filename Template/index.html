@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{title}}</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 1rem;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      section {
+        margin-bottom: 2rem;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{content}}</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h2>Home</h2>
+        <p>This is the home section of the website.</p>
+
+        {%for n in clist3%}
+        <div>
+          {% comment %} {{forloop.last}} {{n.counter}} {% endcomment %} {{n}}
+        </div>
+        {%endfor%}
+
+        <table border="1" cellpadding="10">
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+          </tr>
+          {%for s in details%}
+          <tr>
+            <td>{{s.name}}</td>
+            <td>{{s.phone}}</td>
+          </tr>
+          {%endfor%} 
+          {%for e in clist%}
+           {%if 'PHP1' in clist%} 
+           {{e}} 
+           {%endif%}
+          {%endfor%}
+        </table>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          This section contains information about the website or the
+          person/company it represents.
+        </p>
+      </section>
+
+      <section id="services">
+        <h2>Services</h2>
+        <p>Details about the services offered can be found in this section.</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Contact information and a form to reach out can be placed here.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
