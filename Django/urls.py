@@ -20,8 +20,7 @@ from Django import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('aboutus/', views.aboutus, name="aboutus"),
-    path('course/',views.course,name="course"),
-    path('course/<int:courseid>',views.coursedetail,name="course"),
+    path('aboutus/', views.index, name="aboutus"),
+    path('userForm/',views.userForm,name="userForm"),
     path('',views.homePage),
 ]

@@ -6,21 +6,19 @@ def aboutus(request):
     return HttpResponse("About Us page 1")
 
 
-def course(request):
-    return HttpResponse("Contact Page")
+def userForm(request):
+    try:
+        # n1=request.GET['num1']
+        # n2=request.GET['num2']
+        n1=request.GET.get('num1')
+        n2=request.GET.get('num2')
+        print(n1+n2)
+    except:
+        pass
+    return render(request,"userForm.html")
 
-def coursedetail(request, courseid):
-    return HttpResponse(courseid)
+def index(request):
+    return render(request,"about.html")
 
 def homePage(request):
-    # data = {
-    #     'title': 'Harsh Thapa',
-    #     'content': 'Welcome to My Website',
-    #     'clist': ['PHP', 'Java', 'Python'],
-    #     'clist2': ['Python', 'Java', 'C++'],
-    #     'clist3': ['Swift', 'Kotlin', 'React native'],
-    #     'details': [{'name': 'harsh', 'phone': 9321971947},
-    #                 {'name': 'rohit', 'phone': 8108889047}
-    #                 ],
-    # }
     return render(request, "index.html")
