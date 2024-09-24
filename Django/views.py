@@ -1,9 +1,11 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 
 
 def aboutus(request):
-    return HttpResponse("About Us page 1")
+    if request.method=='GET':
+        output=request.GET.get('output')
+    return render(request,"about.html",{'output':output})
 
 
 def userForm(request):
@@ -19,14 +21,16 @@ def userForm(request):
                'n1':n1,
                'n2':n2,
                'output':finalans
-
            }
+           url="/aboutus/?output={}".format(finalans)
+
+           return HttpResponseRedirect(url)
     except:
         pass
     return render(request,"userForm.html",data)
+   
 
-def index(request):
-    return render(request,"about.html")
+
 
 def homePage(request):
     return render(request, "index.html")
