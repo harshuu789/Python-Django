@@ -64,7 +64,7 @@
                                                 <li><a href="single-blog.html">single-blog</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="/userForm">UserForm</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -103,14 +103,16 @@
                         </a>
                     </div>
                     <h3>Sign in</h3>
-                    <form action="#">
+                    <form method='post'>
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-xl-12 col-md-12">
-                                <input type="text" placeholder="Enter number1" name="num1">
+                                <input type="text" placeholder="Enter number1" value="{{n1}}" name="num1">
                             </div>
                             <div class="col-xl-12 col-md-12">
-                                <input type="text" placeholder="Enter numer 2" name="num2" >
+                                <input type="text" placeholder="Enter numer 2" value="{{n2}}" name="num2" >
                             </div>
+                            <input type="text" value="{{output}}"/>
                             <div class="col-xl-12">
                                 <button type="submit" class="boxed_btn_orange">Sign in</button>
                             </div>

@@ -7,15 +7,23 @@ def aboutus(request):
 
 
 def userForm(request):
+    data={}
     try:
+        if request.method=='POST':
         # n1=request.GET['num1']
         # n2=request.GET['num2']
-        n1=request.GET.get('num1')
-        n2=request.GET.get('num2')
-        print(n1+n2)
+           n1=int(request.POST.get('num1'))
+           n2=int(request.POST.get('num2'))
+           finalans=n1+n2
+           data={
+               'n1':n1,
+               'n2':n2,
+               'output':finalans
+
+           }
     except:
         pass
-    return render(request,"userForm.html")
+    return render(request,"userForm.html",data)
 
 def index(request):
     return render(request,"about.html")
