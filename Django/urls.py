@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('aboutus/', views.aboutus, name="aboutus"),
     path('userForm/',views.userForm,name="userForm"),
+    path('submitForm/',views.submitForm,name="submitForm"),
     path('',views.homePage),
 ]

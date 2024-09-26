@@ -103,9 +103,10 @@
                         </a>
                     </div>
                     <h3>Sign in</h3>
-                    <form method='post'>
+                    <form method='post' action="{% url 'submitForm' %}">
                         {% csrf_token %}
-                        <div class="row">
+                        {{forms}}
+                        {% comment %} <div class="row">
                             <div class="col-xl-12 col-md-12">
                                 <input type="text" placeholder="Enter number1" value="{{n1}}" name="num1">
                             </div>
@@ -116,7 +117,7 @@
                             <div class="col-xl-12">
                                 <button type="submit" class="boxed_btn_orange">Sign in</button>
                             </div>
-                        </div>
+                        </div> {% endcomment %}
                     </form>
                     <p class="doen_have_acc">Don’t have an account? <a class="dont-hav-acc" href="#test-form2">Sign Up</a>
                     </p>
